@@ -1,0 +1,13 @@
+<script>
+    let pathVars = {};
+    
+    window.location.search
+        .replace( "?", "" )
+        .split("&")
+        .map((pair) => {
+            let keyValue = pair.split("=");
+            pathVars[keyValue[0]] = keyValue[1];
+        });
+
+    location.href = pathVars.url;
+</script>
